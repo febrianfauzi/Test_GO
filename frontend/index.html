@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <title>Test Interview</title>
+    </head>
+    <body>
+        <h1 class="font-semibold text-5xl text-center my-5">Daftar Produk</h1>
+
+        <div class="flex flex-row mb-20">
+            <form class="max-w-sm mx-5">
+                <label
+                    for="filter-harga"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Select an option</label
+                >
+                <select
+                    id="filter-harga"
+                    onchange="filterData()"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-pointer"
+                >
+                    <option selected hidden>Filter Harga</option>
+                    <option value="all">Semua</option>
+                    <option value="price1">0 - 100.000</option>
+                    <option value="price2">100.000 - 500.000</option>
+                    <option value="price3">500.000 - 1.000.000</option>
+                    <option value="price4">> 1.000.000</option>
+                </select>
+            </form>
+            <form class="max-w-sm mx-5">
+                <label
+                    for="sorting-harga"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Select an option</label
+                >
+                <select
+                    id="sorting-harga"
+                    onchange="sortData()"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-pointer"
+                >
+                    <option selected hidden>Sorting Harga</option>
+                    <option value="min">Terendah</option>
+                    <option value="max">Tertinggi</option>
+                </select>
+            </form>
+        </div>
+
+        <div
+            class="grid lg:grid-cols-3 sm:grid-cols-2 gap-5 mx-5"
+            id="content-card"
+        ></div>
+    </body>
+    <script src="main.js"></script>
+</html>
